@@ -1,0 +1,14 @@
+{% extends "stocks/layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="{% url 'buy' %}" method="POST">
+        {% csrf_token %}
+        <div>{{ form.symbol }} </div>
+        <div>{{ form.shares }} </div>
+        <button class="btn btn-primary" id="quote" type="submit">BUY</button>
+    </form>
+{% endblock %}

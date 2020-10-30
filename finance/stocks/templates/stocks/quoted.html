@@ -1,0 +1,14 @@
+{% extends "stocks/layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <div>
+       <h1> {{ message.name }} </h1>
+
+       <!-- https://jinja.palletsprojects.com/en/2.11.x/api/#custom-filters -->
+       <h1> ${{ message.price }}<h1>
+    </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "stocks/layout.html" %}
+{% load mathfilters %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h1>Finance Index</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+            <!-- {% for transaction in transaction %}
+            <tr>
+                <td>{{ transaction.stock }}</td>
+                <td>{{ transaction.name }}</td>
+                <td>{{ transaction.shares }}</td>
+                <td>{{ transaction.price }}</td>
+                <td>{{ transaction.shares|mul:transaction.price }}</td>
+            </tr>
+            {% endfor %} -->
+            {% for e in share_total %}
+            <tr>
+                <td>{{ e.stock }}</td>
+                <td>{{ e.name }}</td>
+                <td>{{ e.shares }}</td>
+                <td>{{ e.price }}</td>
+                <td>{{ e.shares|mul:e.price }}</td>
+
+            </tr>
+            {% endfor %}
+            
+            <tr>
+                <td>Cash</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ nathan_cash }}</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="bold"><strong>{{ grandtotal }}</strong></td>
+            </tr>
+    </table>
+{% endblock %}

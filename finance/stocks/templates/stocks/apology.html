@@ -1,0 +1,13 @@
+{% extends "stocks/layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <div>
+        {{ message }}
+    </div>
+
+    <a href="{% url 'buy' %}">Go Back</a>
+{% endblock %}

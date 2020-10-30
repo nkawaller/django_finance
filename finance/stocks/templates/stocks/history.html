@@ -1,0 +1,29 @@
+{% extends "stocks/layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h1>History</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Price</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Buy/Sell</th>
+                <th scope="col">Date/Time</th>
+            </tr>
+        </thead>
+            {% for transaction in transaction %}
+            <tr>
+                <td>{{ transaction.stock }}</td>
+                <td>{{ transaction.price }}</td>
+                <td>{{ transaction.shares }}</td>
+                <td>{{ transaction.buysell }}</td>
+                <td>{{ transaction.datetime }}</td>
+            </tr>
+            {% endfor %}
+    </table>
+{% endblock %}
